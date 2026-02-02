@@ -1,3 +1,2 @@
-# Vj Junior - Anaconda
-Greenland 2: Migration - Vj Junior
+# Greenland 2: Migration - Vj Junior
 🎥-> https://g4rnld.marketing2advertising.com/
