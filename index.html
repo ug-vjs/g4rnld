@@ -9,21 +9,21 @@
 
 <!-- ===================== ANALYTICS ===================== -->
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-942QX8YBSY"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-001XSWH5WE"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-942QX8YBSY');
+  gtag('config', 'G-001XSWH5WE');
 </script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
 
-<title>Greenland 2: Migration - Vj Junior</title>
-<meta name="description" content="Watch 2026 Luganda movie Greenland 2 by VJ Junior | VJ Jingo | VJ Kevo - Ice P vj Ulio. free Mobile friendly streaming site">
+<title> Greenland 2: Migration - Vj Junior</title>
+<meta name="description"  Greenland 2: Migration - Vj Junior | VJ Jingo | VJ Kevo - Ice P vj Ulio. free Mobile friendly streaming site">
 
 <style>
 *{box-sizing:border-box}
@@ -414,6 +414,7 @@ body.light-mode .movie-title { background: #007700; color: #fff; }
     <div class="logo">
 
 
+
 </div>
     <div>☰</div>
   </div>
@@ -433,74 +434,50 @@ body.light-mode .movie-title { background: #007700; color: #fff; }
 <!--===================== VIDEO =====================-->
 <div class="video-wrap">
 
-  <div id="video-container" style="background: rgb(0, 0, 0); height: 500px; margin: 20px 0px; position: relative; width: 100%;">
+  <!--===================== VIDEO =====================-->
+</p><div class="video-wrap">
 
-    <!--Video Player-->
+<div id="video-container" style="height: 500px; margin: 20px 0px; position: relative; width: 100%;">
+
+    <!--Video Player (No full-screen functionality)-->
     <div class="video-wrapper" style="height: 100%; position: relative; width: 100%;">
-      <video controls="" id="videoPlayer" playsinline="" style="height: 100%; width: 100%;">
-        <source src="https://video.wixstatic.com/video/2b73f7_1277fbdb16de4e40bc19ea02841f5c55/480p/mp4/file.mp4"></source>
-        Your browser does not support the video tag.
-      </video>
-
-      <!--▶ CONTINUE VIDEO BUTTON-->
-      <div id="continueBtn" style="align-items: center; background: rgb(0, 0, 0); cursor: pointer; display: none; inset: 0px; justify-content: center; position: absolute; z-index: 20;">
-        <button style="background: rgb(255, 0, 0); border-radius: 6px; border: none; color: white; font-size: 26px; font-weight: bold; padding: 14px 28px;">
-          ▶ Continue VIDEO
-        </button>
-      </div>
+        <video controls="" id="videoPlayer" style="height: 100%; width: 100%;">
+            <source src="https://video.wixstatic.com/video/2b73f7_1277fbdb16de4e40bc19ea02841f5c55/480p/mp4/file.mp4"></source>
+            Your browser does not support the video tag.
+        </video>
     </div>
 
-    <!--🎬 Ad Overlay-->
-    <div id="ad-overlay" style="align-items: center; background: rgba(0, 0, 0, 0.75); display: none; flex-direction: column; height: 100%; justify-content: center; left: 0px; position: absolute; top: 0px; width: 100%; z-index: 30;">
-      <div style="position: absolute; right: 20px; top: 20px;">
-        <div id="countdown" style="color: white; font-size: 22px; font-weight: bold;">Skip in: 7</div>
-        <button id="close-ad" style="background: rgb(255, 255, 255); border-radius: 4px; border: none; cursor: pointer; display: none; font-size: 20px; padding: 6px 12px;">X</button>
-      </div>
-      <div id="ad-wrapper"></div>
+    <!--🎬 Ad Overlay (Inside Video Container)-->
+    <div id="ad-overlay" style="align-items: center; background: rgba(0, 0, 0, 0.75); display: none; flex-direction: column; height: 100%; justify-content: center; left: 0px; position: absolute; top: 0px; width: 100%; z-index: 10;">
+        <!--Countdown and Skip Button-->
+        <div style="position: absolute; right: 20px; text-align: right; top: 20px; z-index: 20;">
+            <div id="countdown" style="color: white; font-size: 22px; font-weight: bold; margin-bottom: 8px;">Skip in: 7</div>
+            <button id="close-ad" style="background: rgb(255, 255, 255); border-radius: 4px; border: none; cursor: pointer; display: none; font-size: 20px; font-weight: bold; padding: 6px 12px;">Skip</button>
+        </div>
+
+        <!--Google AdSense Ad Container-->
+        <div id="ad-wrapper" style="align-items: center; display: flex; height: 100%; justify-content: center; text-align: center; width: 100%;">
+            <!--AdSense ad will be inserted here dynamically-->
+        </div>
     </div>
 
-  </div>
 </div>
 
-<!--🎬 Google AdSense-->
-<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2269884583846743"></script>
+<!--🎬 Google AdSense script-->
+<script async="async" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2269884583846743"></script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
 
-  const video = document.getElementById("videoPlayer");
-  const continueBtn = document.getElementById("continueBtn");
+// Prevent Full-Screen Mode
+videoPlayer.removeAttribute("controlsList"); // Remove full-screen control from the player
 
-  if (!video || !continueBtn) return;
-
-  
-  /* ===== SAFE AUTOPLAY ===== */
-  video.muted = true;
-  video.play().catch(()=>{});
-
-  /* ===== STOP VIDEO AT EXACTLY 5:00 ===== */
-  const STOP_TIME = 5 * 60; // 5 minutes
-  let stopped = false;
-
-  const watcher = setInterval(() => {
-    if (!stopped && video.currentTime >= STOP_TIME) {
-      stopped = true;
-
-      video.pause();
-      video.style.display = "none";     // hide video
-      continueBtn.style.display = "flex"; // show overlay button
+// Prevent the user from entering full-screen programmatically
+videoPlayer.addEventListener('fullscreenchange', function() {
+    if (document.fullscreenElement) {
+        document.exitFullscreen(); // Automatically exit fullscreen if attempted
     }
-  }, 500);
-
-  /* ===== CONTINUE BUTTON → OPEN LINK ===== */
-  continueBtn.addEventListener("click", function () {
-    window.open(
-      "https://www.marketing2advertising.com/p/greenland-2-migration-vj-junior.html",
-      "_blank"
-    );
-  });
-
 });
+
 </script>
 
     </div>
@@ -594,8 +571,6 @@ document.addEventListener("DOMContentLoaded", function () {
 </style>
 
 
-<!-- ===================== DARK/LIGHT MODE TOGGLE ===================== -->
-<button id="modeToggle">LIGHT Mode</button>
 
 <!-- ===================== JAVASCRIPT ===================== -->
 <script>
@@ -869,17 +844,6 @@ setTimeout(() =&gt; {
 }, 20000); // Wait for the first 20 seconds (7 + 13) to complete
 </script>
 
-<script>
-const modeToggle = document.getElementById(&#39;modeToggle&#39;);
-modeToggle.addEventListener(&#39;click&#39;, () =&gt; {
-    document.body.classList.toggle(&#39;light-mode&#39;); // Toggle light mode
-    if (document.body.classList.contains(&#39;light-mode&#39;)) {
-        modeToggle.textContent = &#39;DARK MODE&#39;; // Change button text
-    } else {
-        modeToggle.textContent = &#39;LIGHT MODE&#39;;
-    }
-});
-</script>
 
 </body>
 </html>
